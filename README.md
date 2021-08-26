@@ -63,6 +63,65 @@
 
 #### Initial Hypotheses
 
-> - ** Hypothesis 1 **
+> - <bold>Hypothesis 1</bold>
 > - Alpha = 0.05
-> - $H_0$: 
+> - H_0: Contract type is independent of customer churn.
+> - H_a: Contract type is not independent of customer churn.
+> - Outcome: To be determined.
+
+> - <bold>Hypothesis 2</bold>
+> - Alpha = 0.05
+> - H_0: Internet service type is independent of customer churn.
+> - H_a: Internet service type is not independent of customer churn.
+> - Outcome: To be determined.
+
+> - <bold>Hypothesis 3</bold>
+> - Alpha = 0.05
+> - H_0: The number of services a customer has is not linearly correlated to customer tenure.
+> - H_a: The number of services a customer has is linearly correlated to customer tenure.
+> - Outcome: To be determined.
+
+> - <bold>Hypothesis 4</bold>
+> - Alpha = 0.05
+> - H_0: Payment type is independent of customer churn.
+> - H_a: Payment type is not independent of customer churn.
+> - Outcome: To be determined.
+
+> - <bold>Hypothesis 5</bold>
+> - Alpha = 0.05
+> - H_0: The average number of services of customers who don't churn == the average number of services of customers who do churn.
+> - H_a: The average number of services of customers who don't churn != the average number of services of customers who do churn.
+> - Outcome: To be determined.
+
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+### Executive Summary - Conclusions & Next Steps
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+### Pipeline Stages Breakdown
+
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+##### Plan
+- [x] Create README.md with data dictionary, project and business goals, come up with initial hypotheses.
+- [x] Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
+- [x] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to prepare data with encoding for modeling, and another function to prepare data without encoding for exploration. Store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the funtion.
+- [x]  Clearly define five hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
+- [x] Establish a baseline accuracy and document well.
+- [x] Train three different classification models.
+- [x] Evaluate models on train and validate datasets.
+- [x] Choose the model with that performs the best and evaluate that single model on the test dataset.
+- [x] Create csv file with the measurement id, the probability of the target values, and the model's prediction for each observation in my test dataset.
+- [x] Document conclusions, takeaways, and next steps in the Final Report Notebook.
+
+___
+
+##### Plan -> Acquire
+> - Store functions that are needed to acquire data from the customers, contract_types, internet_service_types, and payment_types tables from the telco_churn database on the Codeup data science database server; make sure the acquire.py module contains the necessary imports to run my code.
+> - The final function will return a pandas DataFrame.
+> - Import the acquire function from the acquire.py module and use it to acquire the data in the Final Report Notebook.
+> - Complete some initial data summarization (`.info()`, `.describe()`, `.value_counts()`, ...).
+> - Plot distributions of individual variables.
+___
