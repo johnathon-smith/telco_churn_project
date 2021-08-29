@@ -63,34 +63,40 @@
 
 #### Initial Hypotheses
 
-> - <bold>Hypothesis 1</bold>
+> - __Hypothesis 1__
 > - Alpha = 0.05
 > - H_0: Contract type is independent of customer churn.
 > - H_a: Contract type is not independent of customer churn.
 > - Outcome: To be determined.
 
-> - <bold>Hypothesis 2</bold>
+> - __Hypothesis 2__
+> - Alpha = 0.05
+> - H_0: The average number of customers that churn with a monthly contract <= the average number of customers that churn without a monthly contract.
+> - H_a: The average number of customers that churn with a monthly contract > the average number of customers that churn without a monthly contract.
+> - Outcome: To be determined.
+
+> - __Hypothesis 3__
 > - Alpha = 0.05
 > - H_0: Internet service type is independent of customer churn.
 > - H_a: Internet service type is not independent of customer churn.
 > - Outcome: To be determined.
 
-> - <bold>Hypothesis 3</bold>
+> - __Hypothesis 4__
 > - Alpha = 0.05
-> - H_0: The number of services a customer has is not linearly correlated to customer tenure.
-> - H_a: The number of services a customer has is linearly correlated to customer tenure.
+> - H_0: The average number of customers that churn with fiber optic internet <= the average number of customers that churn without fiber optic internet.
+> - H_a: The average number of customers that churn with fiber optic internet > the average number of customers that churn without fiber optic internet.
 > - Outcome: To be determined.
 
-> - <bold>Hypothesis 4</bold>
+> - __Hypothesis 5__
 > - Alpha = 0.05
 > - H_0: Payment type is independent of customer churn.
 > - H_a: Payment type is not independent of customer churn.
 > - Outcome: To be determined.
 
-> - <bold>Hypothesis 5</bold>
+> - __Hypothesis 6__
 > - Alpha = 0.05
-> - H_0: The average number of services of customers who don't churn == the average number of services of customers who do churn.
-> - H_a: The average number of services of customers who don't churn != the average number of services of customers who do churn.
+> - H_0: The average number of customers that churn with manual payments <= the average number of customers that churn with automatic payments.
+> - H_a: The average number of customers that churn with manual payments > the average number of customers that churn with automatic payments.
 > - Outcome: To be determined.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
@@ -108,7 +114,7 @@
 - [x] Create README.md with data dictionary, project and business goals, come up with initial hypotheses.
 - [x] Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
 - [x] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to prepare data with encoding for modeling, and another function to prepare data without encoding for exploration. Store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the function.
-- [x]  Clearly define five hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
+- [x]  Clearly define at least two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
 - [ ] Establish a baseline accuracy and document well.
 - [ ] Train three different classification models.
 - [ ] Evaluate models on train and validate datasets.
