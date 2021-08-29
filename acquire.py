@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import env
 import os
 
@@ -18,3 +20,28 @@ def get_telco_data():
         df.to_csv(file_name, index = False)
 
         return df
+
+#The following function will be used in the show_dists function
+def get_vars_to_vis(telco):
+    #Get column names
+    cols = telco.columns
+    
+    #Set up empty list
+    vars_to_vis = []
+    
+    #Use loop to check for 'id' in column name and exclude them from the list
+    for col in cols:
+        if 'id' not in col:
+            vars_to_vis.append(col)
+    
+    return vars_to_vis
+
+#The following function will plot the histograms of all relevant variables in the telco data set.
+#Does not include columns that have 'id' in the name.
+def show_dists(telco):
+    vars_to_vis = get_vars_to_vis(telco)
+    
+    for col in vars_to_vis:
+        plt.hist(telco[col], align = 'left')
+        plt.title(col)
+        plt.show()
