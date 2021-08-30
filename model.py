@@ -66,7 +66,7 @@ def compare_models(X_train, y_train, X_validate, y_validate):
 #The following function will evaluate the chosen model on the test data set and return the clf model.
 def test_model(X_train, y_train, X_validate, y_validate, X_test, y_test):
     #Instantiate the model
-    clf = RandomForestClassifier(random_state = 123, max_depth = 5, min_samples_leaf = 15)
+    clf = RandomForestClassifier(random_state = 123, max_depth = 10, min_samples_leaf = 5)
 
     #Fit the model
     clf.fit(X_train, y_train)
@@ -92,8 +92,8 @@ def test_model(X_train, y_train, X_validate, y_validate, X_test, y_test):
 
     #Create a dictionary for model values
     output = {
-        'max_depth':5,
-        'min_samples_leaf': 15,
+        'max_depth':10,
+        'min_samples_leaf': 5,
         'True Positves': tp,
         'False Positives': fp,
         'True Negatives': tn,
@@ -108,9 +108,9 @@ def test_model(X_train, y_train, X_validate, y_validate, X_test, y_test):
 
     test_set = []
     test_set.append(output)
-    pd.DataFrame(test_set)
+    test_df = pd.DataFrame(test_set)
 
-    return clf
+    return clf, test_df
 
 #The following function will create and return a df of predictions for the final deliverable.
 #You can take the returned data frame and turn it into a .csv file.
@@ -125,6 +125,7 @@ def get_preds_df(test_explore, clf, X_test):
     reset_test['probability_churned'] = proba_df['probability_churned']
 
     #Now add the test predictions
+    clf_preds = clf.predict(X_test)
     reset_test['predicted'] = clf_preds
 
     #Now select only the columns required in a new data frame.
