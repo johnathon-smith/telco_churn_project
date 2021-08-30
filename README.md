@@ -67,42 +67,48 @@
 > - Alpha = 0.05
 > - H_0: Contract type is independent of customer churn.
 > - H_a: Contract type is not independent of customer churn.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis.
 
 > - __Hypothesis 2__
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with a monthly contract <= the average number of customers that churn without a monthly contract.
 > - H_a: The average number of customers that churn with a monthly contract > the average number of customers that churn without a monthly contract.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis. 
 
 > - __Hypothesis 3__
 > - Alpha = 0.05
 > - H_0: Internet service type is independent of customer churn.
 > - H_a: Internet service type is not independent of customer churn.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis.
 
 > - __Hypothesis 4__
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with fiber optic internet <= the average number of customers that churn without fiber optic internet.
 > - H_a: The average number of customers that churn with fiber optic internet > the average number of customers that churn without fiber optic internet.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis.
 
 > - __Hypothesis 5__
 > - Alpha = 0.05
 > - H_0: Payment type is independent of customer churn.
 > - H_a: Payment type is not independent of customer churn.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis.
 
 > - __Hypothesis 6__
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with manual payments <= the average number of customers that churn with automatic payments.
 > - H_a: The average number of customers that churn with manual payments > the average number of customers that churn with automatic payments.
-> - Outcome: To be determined.
+> - Outcome: I rejected the null hypothesis.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
 ### Executive Summary - Conclusions & Next Steps
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+> - Through data exploration and statistical analysis, I found customer contract type, payment type, and internet service type to all be significant drivers of churn.
+> - I constructed and evaluated over 200 Random Forest Classifier models with varying max_depth and min_samples_leaf hyperparameter values. 
+> - Ultimately, my final model was chosen as my best model based on its accuracy score (\~80%), higher recall rate (\~52%), and low indication of being over fit.
+> - My final model outperformed the baseline model which had an accuracy score of about 73%.
+> - Created a csv file containing customer_id, probability of churn, and prediction of whether or not each customer churned using the test results of my final model.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
@@ -115,12 +121,12 @@
 - [x] Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
 - [x] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to prepare data with encoding for modeling, and another function to prepare data without encoding for exploration. Store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the function.
 - [x]  Clearly define at least two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
-- [ ] Establish a baseline accuracy and document well.
-- [ ] Train three different classification models.
-- [ ] Evaluate models on train and validate datasets.
-- [ ] Choose the model with that performs the best and evaluate that single model on the test dataset.
-- [ ] Create csv file with the measurement id, the probability of the target values, and the model's prediction for each observation in my test dataset.
-- [ ] Document conclusions, takeaways, and next steps in the Final Report Notebook.
+- [x] Establish a baseline accuracy and document well.
+- [x] Train at least three different classification models.
+- [x] Evaluate models on train and validate datasets.
+- [x] Choose the model that performs the best and evaluate that single model on the test dataset.
+- [x] Create csv file with customer_id, the probability of churn, and the model's prediction for each observation in my test dataset.
+- [x] Document conclusions, takeaways, and next steps in the Final Report Notebook.
 
 ___
 
@@ -131,3 +137,47 @@ ___
 > - Complete some initial data summarization (`.info()`, `.describe()`, `.value_counts()`, ...).
 > - Plot distributions of individual variables.
 ___
+
+##### Plan -> Acquire -> Prepare
+> - Store functions needed to prepare the telco data; make sure the module contains the necessary imports to run the code. The final function should do the following:
+    - Split the data into train/validate/test.
+    - Handle any missing values.
+    - Handle erroneous data and/or outliers that need addressing.
+    - Encode variables as needed.
+    - Create any new features, if made for this project.
+> - Import the prepare function from the prepare.py module and use it to prepare the data in the Final Report Notebook.
+___
+
+##### Plan -> Acquire -> Prepare -> Explore
+> - Answer key questions, my hypotheses, and figure out the features that can be used in a classification model to best predict the target variable, churn. 
+> - Run at least 2 statistical tests in data exploration. Document my hypotheses, set an alpha before running the tests, and document the findings well.
+> - Create visualizations and run statistical tests that work toward discovering variable relationships (independent with independent and independent with dependent). The goal is to identify features that are related to customer churn (the target), identify any data integrity issues, and understand 'how the data works'. If there appears to be some sort of interaction or correlation, assume there is no causal relationship and brainstorm (and document) ideas on reasons there could be correlation.
+> - Summarize my conclusions, provide clear answers to my specific questions, and summarize any takeaways/action plan from the work above.
+___
+
+##### Plan -> Acquire -> Prepare -> Explore -> Model
+> - Establish a baseline accuracy to determine if having a model is better than no model and train and compare at least 3 different models. Document these steps well.
+> - Train (fit, transform, evaluate) multiple models, varying the algorithm and/or hyperparameters you use.
+> - Compare evaluation metrics across all the models you train and select the ones you want to evaluate using your validate dataframe.
+> - Feature Selection (after initial iteration through pipeline): Are there any variables that seem to provide limited to no additional information? If so, remove them.
+> - Based on the evaluation of the models using the train and validate datasets, choose the best model to try with the test data, once.
+> - Test the final model on the out-of-sample data (the testing dataset), summarize the performance, interpret and document the results.
+___
+
+##### Plan -> Acquire -> Prepare -> Explore -> Model -> Deliver
+> - Introduce myself and my project goals at the very beginning of my notebook walkthrough.
+> - Summarize my findings at the beginning like I would for an Executive Summary. (Don't throw everything out that I learned from Storytelling) .
+> - Walk Codeup Data Science Team through the analysis I did to answer my questions and that lead to my findings. (Visualize relationships and Document takeaways.) 
+> - Clearly call out the questions and answers I am analyzing as well as offer insights and recommendations based on my findings.
+
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+### Reproduce My Project
+
+<hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
+
+You will need your own env file with database credentials along with all the necessary files listed below to run my final project notebook. 
+- [x] Read this README.md
+- [ ] Download the aquire.py, prepare.py, explore.py, model.py, and final_report.ipynb files into your working directory
+- [ ] Add your own env file to your directory. (user, password, host)
+- [ ] Run the final_report.ipynb notebook
