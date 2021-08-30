@@ -40,14 +40,14 @@ def prep_without_encoding(telco):
     telco.total_charges = telco.total_charges.astype(float)
 
     #Select all categorical columns (ignoring customer_id since it will be dropped)
-    cat_cols = telco.select_dtypes('object').columns[1:]
+    cat_cols = telco.select_dtypes('object').columns
 
     #Strip all leading and trailing whitespace from each categorical column
     for col in cat_cols:
         telco[col] = telco[col].str.strip()
 
     #drop unnecessary columns
-    telco.drop(columns = ['customer_id', 'internet_service_type_id', 'contract_type_id', 'payment_type_id', 'contract_type_id.1', 'internet_service_type_id.1', 'payment_type_id.1'], inplace = True)
+    telco.drop(columns = ['internet_service_type_id', 'contract_type_id', 'payment_type_id', 'contract_type_id.1', 'internet_service_type_id.1', 'payment_type_id.1'], inplace = True)
 
     #For the explore stage, I want my categorical values to be easy to read.
     #So I will convert the senior_citizen column to 'object' datatype and change its values to 'yes' or 'no'.
