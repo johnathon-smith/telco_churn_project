@@ -63,41 +63,41 @@
 
 #### Initial Hypotheses
 
-> - __Hypothesis 1__
+__Hypothesis 1__:
 > - Alpha = 0.05
 > - H_0: Contract type is independent of customer churn.
 > - H_a: Contract type is not independent of customer churn.
-> - Outcome: I rejected the null hypothesis.
+Outcome: I rejected the null hypothesis.
 
-> - __Hypothesis 2__
+__Hypothesis 2__:
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with a monthly contract <= the average number of customers that churn without a monthly contract.
 > - H_a: The average number of customers that churn with a monthly contract > the average number of customers that churn without a monthly contract.
-> - Outcome: I rejected the null hypothesis. 
+Outcome: I rejected the null hypothesis. 
 
-> - __Hypothesis 3__
+__Hypothesis 3__
 > - Alpha = 0.05
 > - H_0: Internet service type is independent of customer churn.
 > - H_a: Internet service type is not independent of customer churn.
-> - Outcome: I rejected the null hypothesis.
+Outcome: I rejected the null hypothesis.
 
-> - __Hypothesis 4__
+__Hypothesis 4__
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with fiber optic internet <= the average number of customers that churn without fiber optic internet.
 > - H_a: The average number of customers that churn with fiber optic internet > the average number of customers that churn without fiber optic internet.
-> - Outcome: I rejected the null hypothesis.
+Outcome: I rejected the null hypothesis.
 
-> - __Hypothesis 5__
+__Hypothesis 5__
 > - Alpha = 0.05
 > - H_0: Payment type is independent of customer churn.
 > - H_a: Payment type is not independent of customer churn.
-> - Outcome: I rejected the null hypothesis.
+Outcome: I rejected the null hypothesis.
 
-> - __Hypothesis 6__
+__Hypothesis 6__
 > - Alpha = 0.05
 > - H_0: The average number of customers that churn with manual payments <= the average number of customers that churn with automatic payments.
 > - H_a: The average number of customers that churn with manual payments > the average number of customers that churn with automatic payments.
-> - Outcome: I rejected the null hypothesis.
+Outcome: I rejected the null hypothesis.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
