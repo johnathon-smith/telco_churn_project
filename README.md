@@ -105,10 +105,9 @@ Outcome: I rejected the null hypothesis.
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
 > - Through data exploration and statistical analysis, I found customer contract type, payment type, and internet service type to all be significant drivers of churn.
-> - I constructed and evaluated over 200 Random Forest Classifier models with varying max_depth and min_samples_leaf hyperparameter values. 
-> - Ultimately, my final model was chosen as my best model based on its accuracy score (\~80%), higher recall rate (\~52%), and low indication of being over fit.
-> - My final model outperformed the baseline model which had an accuracy score of about 73%.
-> - Created a csv file containing customer_id, probability of churn, and prediction of whether or not each customer churned using the test results of my final model.
+> - Month-to-month customers, customers with fiber optic internet service, and customers that pay using electronic check are significantly more likely to churn than others.
+> -  Based on my findings, I recommend starting a campagin to convert customers that pay with electronic check to some other automatic form of payment in order to reduce churn.
+> - After constructing and evaluating over 200 models, I chose my best model based on its accuracy score (\~80%), higher recall rate (\~52%), and low indication of being over fit. It outperformed the baseline accuracy by about 7%.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
@@ -119,7 +118,7 @@ Outcome: I rejected the null hypothesis.
 ##### Plan
 - [x] Create README.md with data dictionary, project and business goals, come up with initial hypotheses.
 - [x] Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
-- [x] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to prepare data with encoding for modeling, and another function to prepare data without encoding for exploration. Store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the function.
+- [x] Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to prepare data with encoding for modeling, and another function to prepare data without encoding for exploration. Store the functions in a prepare.py module, and prepare data in Final Report Notebook by importing and using the functions.
 - [x]  Clearly define at least two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
 - [x] Establish a baseline accuracy and document well.
 - [x] Train at least three different classification models.
@@ -157,7 +156,7 @@ ___
 
 ##### Plan -> Acquire -> Prepare -> Explore -> Model
 > - Establish a baseline accuracy to determine if having a model is better than no model and train and compare at least 3 different models. Document these steps well.
-> - Train (fit, transform, evaluate) multiple models, varying the algorithm and/or hyperparameters you use.
+> - Train (fit, transform, evaluate) multiple models, varying the algorithm and/or hyperparameters.
 > - Compare evaluation metrics across all the models you train and select the ones you want to evaluate using your validate dataframe.
 > - Feature Selection (after initial iteration through pipeline): Are there any variables that seem to provide limited to no additional information? If so, remove them.
 > - Based on the evaluation of the models using the train and validate datasets, choose the best model to try with the test data, once.
@@ -168,7 +167,10 @@ ___
 > - Introduce myself and my project goals at the very beginning of my notebook walkthrough.
 > - Summarize my findings at the beginning like I would for an Executive Summary. (Don't throw everything out that I learned from Storytelling) .
 > - Walk Codeup Data Science Team through the analysis I did to answer my questions and that lead to my findings. (Visualize relationships and Document takeaways.) 
-> - Clearly call out the questions and answers I am analyzing as well as offer insights and recommendations based on my findings.
+> - Clearly call my the questions and answers:
+    - What are the drivers of churn? Contract type, Internet Service type, and Payment Type
+    - What can we do to reduce churn? Begin switching customers to automatic payment types.
+    - What would I do with more time? I would explore the data to discover why those with month-to-month contract types and fiber optic internet service are more likely to churn than others. I would also experiment with different models for more accurate predictions.
 
 <hr style="border-top: 10px groove blueviolet; margin-top: 1px; margin-bottom: 1px"></hr>
 
